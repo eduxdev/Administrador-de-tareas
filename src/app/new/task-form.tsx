@@ -1,6 +1,6 @@
-import * as React from "react"
+import * as React from "react";
 
-import { Button, buttonVariants } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,27 +8,23 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
-import { createTask, updateTask } from "@/actions/task-actions"
-import { Task } from ".prisma/client"
-import Link from "next/link"
+} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
+import { createTask, updateTask } from "@/actions/task-actions";
+import Link from "next/link";
+import { Task } from "@prisma/client"; // Importación del tipo Task
 
-
-export function TaskForm({task}: {task: Task}) {
-
-
+export function TaskForm({ task }: { task: Task }) {
   const functionAction = task?.id ? updateTask : createTask;
- 
 
   return (
     <form action={functionAction}>
@@ -84,5 +80,5 @@ export function TaskForm({task}: {task: Task}) {
       </CardFooter>
     </Card>
     </form>
-  )
+  );
 }
